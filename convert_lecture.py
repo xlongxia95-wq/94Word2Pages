@@ -161,8 +161,8 @@ def convert_to_latex(text: str) -> str:
         (r'τ\s*=\s*r×F', r'$\\tau = r \\times F$'),
         (r'τ\s*=\s*dL/dt', r'$\\tau = \\frac{dL}{dt}$'),
         
-        # 向量表示
-        (r'→(\w)', r'$\\vec{\1}$'),
+        # 向量表示（只轉英文變數，不轉中文）
+        (r'→([a-zA-Z])', r'$\\vec{\1}$'),
     ]
     
     for pattern, replacement in replacements:
